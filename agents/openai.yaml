@@ -1,0 +1,7 @@
+interface:
+  display_name: "简历定向优化与代投递"
+  short_description: "按顾客需求改简历、筛岗位并生成投递总表"
+  default_prompt: "使用 $resume-application-service 处理这位顾客：核对资料和目标岗位，完成定向简历、岗位筛选和投递总表。"
+
+policy:
+  allow_implicit_invocation: true
