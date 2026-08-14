@@ -1,0 +1,3 @@
+.qa-*/
+*.inspect.ndjson
+.DS_Store

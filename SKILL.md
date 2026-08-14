@@ -1,19 +1,26 @@
 ---
 name: resume-application-service
-description: Use when a customer needs a targeted resume rewrite, job matching, and assisted application submission based on a target role or JD.
+description: Use when a customer needs a targeted resume rewrite, job matching, and assisted or semi-automated application submission based on a target role or JD.
 ---
 
 # 简历定向优化与代投递
 
 ## Overview
 
-按“资料采集 → 目标确认 → 定向改简历 → 顾客确认 → 筛选岗位 → 顾客确认投递范围 → 代投递 → 投递总表交付”的顺序服务顾客。服务终点是更新并发送一张可查看全部投递信息的总表，不包含 HR 沟通、进度追踪、面试安排、测评填写或 Offer 跟进。
+按“资料采集 → 目标确认 → JD 分析 → 定向改简历 → 顾客确认 → 筛选岗位 → 顾客确认投递范围 → 代投递 → 投递总表交付”的顺序服务顾客。默认采用完整内容型简历，参考 `assets/templates/resume-template.docx` 的版式，正式投递版优先做 1.5 到 2 页，不为了压成一页而删掉关键事实。
 
 ## Required companion skills
 
 **REQUIRED SUB-SKILL:** Use `avoid-ai-writing` for all resume and customer-facing copy before delivery.
 
 Use `documents` when creating or editing DOCX resumes or service documents. Use `spreadsheets` when creating the application tracker.
+
+Read the supporting rules before detailed work:
+
+- `references/resume-writing-rules.md`
+- `references/jd-analysis-rules.md`
+- `references/application-workflow.md`
+- `references/customer-intake-guide.md`
 
 ## Workflow
 
@@ -31,7 +38,7 @@ Use `documents` when creating or editing DOCX resumes or service documents. Use 
 
 ### 4. 简历诊断与定向改写
 
-先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再将真实经历按相关性重排。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。完成后用 `avoid-ai-writing` 做 professional voice 审校。
+先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。完成后用 `avoid-ai-writing` 做 professional voice 审校。
 
 ### 5. 顾客审核与定稿
 
@@ -43,7 +50,7 @@ Use `documents` when creating or editing DOCX resumes or service documents. Use 
 
 ### 7. 投递授权与代投递
 
-把待投递岗位清单发给顾客确认。没有明确授权，不代投。按确认范围执行；无法提交、链接失效或平台要求顾客本人操作时，在表格备注中记录原因，不假报已投递。
+把待投递岗位清单发给顾客确认。没有明确授权，不代投。默认使用半自动模式：可以协助打开岗位、填写重复信息和整理材料，但每个岗位提交前都要保留顾客确认。无法提交、链接失效、验证码或平台要求顾客本人操作时，在表格备注中记录原因，不假报已投递。
 
 ### 8. 投递总表交付
 
@@ -60,6 +67,15 @@ Use `documents` when creating or editing DOCX resumes or service documents. Use 
 - 岗位清单：仅保留顾客确认或已明确授权的岗位。
 - 投递记录总表：一张表汇总所有投递信息，岗位链接可点击。
 - 服务结束说明：发送表格链接，说明服务边界和资料保存方式。
+
+## Shareable resources
+
+- `assets/templates/resume-template.docx`: 脱敏后的完整排版模板，不含真实姓名、联系方式或照片。
+- `assets/examples/anonymized-resume.docx`: 脱敏示例，展示内容密度和版式效果。
+- `templates/customer-intake.docx`: 顾客填写的信息采集表。
+- `templates/application-tracker.xlsx`: 顾客查看全部投递信息的总表模板。
+
+公开分享前不得把真实顾客简历、电话号码、邮箱、照片、账号、密码、验证码或招聘平台登录信息放进仓库。
 
 ## Quality gates
 
