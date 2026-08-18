@@ -92,3 +92,4 @@ Read the supporting rules before detailed work:
 - 任何换方向、删经历、补经历、超范围修改或超数量投递，都先确认再执行。
 - 交付前必须完成 `references/quality-gates.md` 的事实、匹配、隐私、文件和授权检查。
 - 公开分享前扫描文本、文档、表格、图片元数据和 Git 提交信息，不得包含姓名、电话、邮箱、照片、账号、真实岗位记录或可反推身份的组合信息。
+- 发布前运行 `scripts/validate_public_release.sh`；检查失败时不得发布。
