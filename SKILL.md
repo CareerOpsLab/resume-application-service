@@ -7,7 +7,7 @@ description: Use when a customer needs a targeted resume rewrite, job matching, 
 
 ## Overview
 
-按“资料采集 → 目标确认 → JD 分析 → 匹配评分 → 定向改简历 → 顾客确认 → 筛选岗位 → 顾客确认投递范围 → 代投递 → 投递总表交付”的顺序服务顾客。默认采用完整内容型简历，参考 `assets/templates/resume-template.docx` 的版式，正式投递版优先做 1.5 到 2 页，不为了压成一页而删掉关键事实。
+按“资料采集 → 目标确认 → JD 分析 → 匹配评分 → 定向改简历 → 简历评分 → 自动改写循环 → 顾客确认 → 筛选岗位 → 顾客确认投递范围 → 代投递 → 投递总表交付”的顺序服务顾客。默认采用完整内容型简历，参考 `assets/templates/resume-template.docx` 的版式，正式投递版优先做 1.5 到 2 页，不为了压成一页而删掉关键事实。
 
 本 Skill 采用隐私优先原则：公开仓库只保留虚构或脱敏资料，顾客真实资料只在顾客授权的工作环境中处理，不写入仓库、示例、截图或公开日志。
 
@@ -24,6 +24,7 @@ Read the supporting rules before detailed work:
 - `references/application-workflow.md`
 - `references/customer-intake-guide.md`
 - `references/matching-scorecard.md`
+- `references/resume-scorecard.md`
 - `references/quality-gates.md`
 - `references/exception-handling.md`
 
@@ -43,7 +44,18 @@ Read the supporting rules before detailed work:
 
 ### 4. 简历诊断与定向改写
 
-先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。完成后用 `avoid-ai-writing` 做 professional voice 审校，并保留关键改写的前后对照和事实依据。
+先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算岗位匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。
+
+### 4.1 简历评分与自动改写
+
+简历初稿完成后，必须立即按照 `references/resume-scorecard.md` 评分，不得跳过或只凭主观判断交付。
+
+- 评分达到 80 分：进入顾客审核。
+- 评分低于 80 分：针对最低分的两个维度自动改写，然后重新评分。
+- 最多自动改写 2 轮，共 3 次评分。每轮都必须保留评分、问题、修改动作和新分数。
+- 自动改写只能使用顾客已提供的事实；缺少证据时列为待补充问题，不得为了达到 80 分虚构数字、职责或工具。
+- 每轮改写后都使用 `avoid-ai-writing` 做 professional voice 审校，并重新检查事实一致性。
+- 两轮后仍低于 80 分时，交付当前最高分版本，同时说明分数、未解决问题和需要顾客补充的证据。
 
 ### 5. 顾客审核与定稿
 
@@ -71,6 +83,7 @@ Read the supporting rules before detailed work:
 - 顾客确认记录：确认最终简历和投递范围。
 - 岗位清单：仅保留顾客确认或已明确授权的岗位。
 - 岗位匹配评分：每个推荐岗位给出总分、分项分数、匹配证据和风险提示。
+- 简历评分记录：初稿分数、每轮自动改写原因、复评分数和最终版本分数。
 - 改写对照：至少列出关键改写的原文、改写后内容、修改原因和事实依据。
 - 投递记录总表：一张表汇总所有投递信息，岗位链接可点击。
 - 服务结束说明：发送表格链接，说明服务边界和资料保存方式。
@@ -91,5 +104,6 @@ Read the supporting rules before detailed work:
 - 不得把顾客自主查看的岗位状态描述为服务方已跟进的结果。
 - 任何换方向、删经历、补经历、超范围修改或超数量投递，都先确认再执行。
 - 交付前必须完成 `references/quality-gates.md` 的事实、匹配、隐私、文件和授权检查。
+- 简历低于 80 分时必须完成自动改写和复评；达到两轮上限仍低于 80 分时，必须标明分数和证据缺口。
 - 公开分享前扫描文本、文档、表格、图片元数据和 Git 提交信息，不得包含姓名、电话、邮箱、照片、账号、真实岗位记录或可反推身份的组合信息。
 - 发布前运行 `scripts/validate_public_release.sh`；检查失败时不得发布。

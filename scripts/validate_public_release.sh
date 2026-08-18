@@ -8,6 +8,7 @@ required_files=(
   "SKILL.md"
   "README.md"
   "references/matching-scorecard.md"
+  "references/resume-scorecard.md"
   "references/quality-gates.md"
   "references/exception-handling.md"
   "agents/openai.yaml"
