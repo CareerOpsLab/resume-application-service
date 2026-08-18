@@ -26,6 +26,7 @@
 
 - 已使用 `avoid-ai-writing` 做 professional voice 审校。
 - DOCX 打开后没有溢出、截断、错位或照片变形。
+- 已按 `references/document-rendering-qa.md` 渲染并逐页检查 DOCX/PDF。
 - 必要时另存 PDF 并检查分页、链接和字体。
 - 关键改写有原文、改写后内容、修改原因和事实依据。
 

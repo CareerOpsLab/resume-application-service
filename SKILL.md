@@ -25,6 +25,9 @@ Read the supporting rules before detailed work:
 - `references/customer-intake-guide.md`
 - `references/matching-scorecard.md`
 - `references/resume-scorecard.md`
+- `references/evidence-discovery.md`
+- `references/multi-job-workflow.md`
+- `references/document-rendering-qa.md`
 - `references/quality-gates.md`
 - `references/exception-handling.md`
 
@@ -40,11 +43,15 @@ Read the supporting rules before detailed work:
 
 ### 3. 信息采集
 
-收集原简历、工作经历、项目经历、教育背景、证书、作品或链接、目标 JD 和个人限制条件。每条经历尽量补充时间、动作、对象、工具、结果和可验证数据。缺信息就列问题清单，不补写事实。
+收集原简历、工作经历、项目经历、教育背景、证书、作品或链接、目标 JD 和个人限制条件。按 `references/evidence-discovery.md` 追问每条经历的时间、动作、对象、工具、个人贡献、结果和可验证数据。缺信息就列问题清单，不补写事实。
 
 ### 4. 简历诊断与定向改写
 
-先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算岗位匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。
+先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算岗位匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。生成 DOCX/PDF 后按 `references/document-rendering-qa.md` 渲染并逐页检查，再进入评分循环。
+
+### 4.2 多岗位模式
+
+顾客一次提供多个 JD、多个岗位链接或明确提出批量投递时，按 `references/multi-job-workflow.md` 启用多岗位模式。先建立共享经历库和共性缺口，再为每个岗位单独匹配、评分和生成版本；不同方向不得平均拼在同一份简历中。
 
 ### 4.1 简历评分与自动改写
 
@@ -84,6 +91,7 @@ Read the supporting rules before detailed work:
 - 岗位清单：仅保留顾客确认或已明确授权的岗位。
 - 岗位匹配评分：每个推荐岗位给出总分、分项分数、匹配证据和风险提示。
 - 简历评分记录：初稿分数、每轮自动改写原因、复评分数和最终版本分数。
+- 文档渲染检查：DOCX/PDF 页数、字体、分页、表格、照片和链接检查结果。
 - 改写对照：至少列出关键改写的原文、改写后内容、修改原因和事实依据。
 - 投递记录总表：一张表汇总所有投递信息，岗位链接可点击。
 - 服务结束说明：发送表格链接，说明服务边界和资料保存方式。
@@ -105,5 +113,6 @@ Read the supporting rules before detailed work:
 - 任何换方向、删经历、补经历、超范围修改或超数量投递，都先确认再执行。
 - 交付前必须完成 `references/quality-gates.md` 的事实、匹配、隐私、文件和授权检查。
 - 简历低于 80 分时必须完成自动改写和复评；达到两轮上限仍低于 80 分时，必须标明分数和证据缺口。
+- DOCX/PDF 未完成渲染检查前不得交付；发现截断、溢出、错位、缺字或字体替换时必须先修复。
 - 公开分享前扫描文本、文档、表格、图片元数据和 Git 提交信息，不得包含姓名、电话、邮箱、照片、账号、真实岗位记录或可反推身份的组合信息。
 - 发布前运行 `scripts/validate_public_release.sh`；检查失败时不得发布。
