@@ -47,7 +47,7 @@ Read the supporting rules before detailed work:
 
 ### 4. 简历诊断与定向改写
 
-先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算岗位匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：所有正式简历的正文、标题、表格和项目符号统一使用思源黑体（Source Han Sans SC），顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、技能证书、荣誉奖项和个人优势。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。生成 DOCX/PDF 后按 `references/document-rendering-qa.md` 渲染并逐页检查，再进入评分循环。
+先提取 JD 的职责、硬性条件、关键词和筛选逻辑，再按照 `references/matching-scorecard.md` 计算岗位匹配度，最后将真实经历按相关性重排。使用 `assets/templates/resume-template.docx` 作为默认排版参考：所有正式简历的正文、标题、表格和项目符号统一使用思源黑体（Source Han Sans SC），顶部包含姓名、求职方向、联系方式、邮箱、政治面貌和照片；正文使用蓝色分区标题和横线分隔；结构包含教育经历、工作／实习经历、校园经历、专业技能与证书、荣誉奖项和个人优势。所有标题统一加粗，正文保持正常字重，不对正文内容随意加粗。用具体动作和结果表达，保留原有时间、公司、岗位、数字和事实；不虚构经历，不为了 ATS 堆砌关键词。生成 DOCX/PDF 后按 `references/document-rendering-qa.md` 渲染并逐页检查，再进入评分循环。
 
 ### 4.2 多岗位模式
 
